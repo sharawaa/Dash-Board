@@ -9,9 +9,13 @@ export default function SlideMenu() {
     const navigate = useNavigate();
 
   return <div className="slidemenu">
-    <button  onClick={()=>{navigate("/")}}>Home</button>
-    <button onClick={()=>{navigate("/login")}}>Login</button>
-    <button onClick={()=>{navigate("/users")}}>Users</button>
-    <button onClick={()=>{navigate("/products")}}>Products</button>
+    <button  onClick={()=>{navigate("/")}}>хянах самбар</button>
+    <button onClick={()=>{navigate("/Бүтээгдэхүүнүүд")}}>Бүтээгдэхүүнүүд</button>
+    <button onClick={()=>{navigate("/Захиалгууд")}}>Захиалгууд</button>
+    <button onClick={()=>{navigate("/Хэрэглэгчид")}}>Хэрэглэгчид</button>
+    <button onClick={()=>{navigate("/Модератор")}}>Модератор</button>
+    <button onClick={()=>{navigate("/Тохиргоо")}}>Тохиргоо</button>
+
   </div>;
+  
 }
