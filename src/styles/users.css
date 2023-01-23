@@ -1,5 +1,38 @@
-.users{
-    background-color: rgb(17, 161, 113);
+.users-container{
+    
+    background-color: #EFEFF0;
     min-height: 100vh;
-    width: 70%;
+    width: 75%;
+    margin: auto;
+}
+.users{
+    
+    display: flex;
+    flex-direction: column;
+   
+   
+    max-width: 1000px;
+    height: 600px;
+    margin:  40px auto;
+    background-color: #FFFFFF;
+    border-radius: 10px
+}
+.users-title-p{
+    margin: 20px;
+    border-bottom: solid 1px black;
+}
+.users-button{
+    margin: 20px;
+}
+.users-head{
+    display: flex;
+    justify-content: space-between;
+}
+.users-head-button{
+    margin: 20px;
+}
+.users-head-input{
+    width: 340px;
+    height: 40px;
+    margin: 20px;
 }

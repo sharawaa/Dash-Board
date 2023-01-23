@@ -1,0 +1,34 @@
+.moderator-container{
+    
+    background-color: #EFEFF0;
+    min-height: 100vh;
+    width: 75%;
+    margin: auto;
+}
+.moderator{
+    
+    display: flex;
+    flex-direction: column;
+   
+   
+    max-width: 1000px;
+    height: 600px;
+    margin:  40px auto;
+    background-color: #FFFFFF;
+    border-radius: 10px
+}
+.moderator-title-p{
+    margin: 20px;
+    border-bottom: solid 1px black;
+}
+
+.moderator-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.moderator-head-input{
+    width: 340px;
+    height: 40px;
+    margin: 20px;
+}

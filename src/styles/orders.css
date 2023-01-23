@@ -1,26 +1,38 @@
-.product-container{
+.orders-container{
     
     background-color: #EFEFF0;
     min-height: 100vh;
     width: 75%;
     margin: auto;
 }
-.product{
+.orders{
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+   
+   
     max-width: 1000px;
     height: 600px;
     margin:  40px auto;
     background-color: #FFFFFF;
     border-radius: 10px
 }
-.product-title-p{
+.orders-title-p{
     margin: 20px;
     border-bottom: solid 1px black;
 }
-.product-button{
+.orders-button{
+    margin: 20px;
+}
+.orders-header{
+    display: flex;
+    justify-content: space-between;
+}
+.orders-header-button{
+    margin: 20px;
+}
+.orders-header-input{
+    width: 340px;
+    height: 40px;
     margin: 20px;
 }
