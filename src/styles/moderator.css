@@ -1,11 +1,11 @@
-.users-container{
+.moderator-container{
     
     background-color: #EFEFF0;
     min-height: 100vh;
     width: 75%;
     margin: auto;
 }
-.users{
+.moderator{
     
     display: flex;
     flex-direction: column;
@@ -17,21 +17,17 @@
     background-color: #FFFFFF;
     border-radius: 10px
 }
-.users-title-p{
+.moderator-title-p{
     margin: 20px;
     border-bottom: solid 1px black;
 }
-.users-button{
-    margin: 20px;
-}
-.users-head{
+
+.moderator-head{
     display: flex;
     justify-content: space-between;
 }
-.users-head-button{
-    margin: 20px;
-}
-.users-head-input{
+
+.moderator-head-input{
     width: 340px;
     height: 40px;
     margin: 20px;

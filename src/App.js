@@ -1,14 +1,15 @@
-import "./App.css";
+import "./styles/App.css";
 import { Route, Routes } from "react-router-dom";
-
-import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Header from "./components/Header";
 
-import Footer from "./components/Footer"
-import SlideMenu from "./components/SlideMenu";
+import SideMenu from "./components/SideMenu";
 import Products from "./pages/Products";
 import Users from "./pages/Users";
+import Orders from "./pages/Orders";
+
+import Settings from "./pages/Settings";
+import Control from "./pages/Control";
+import Moderators from "./pages/Moderators";
 
 
 function App() {
@@ -17,17 +18,20 @@ function App() {
       <Header />
         <div className="main">
           
-          <SlideMenu />
+          <SideMenu />
           
           <Routes>
-            <Route  path="/" element={<Home />} />
-            <Route path="/products" element={<Products />}/>
-            <Route path="/login" element={<Login />} />
-            <Route path="/users" element={<Users />}/>
+            <Route  path="/" element={<Control />} />
+            <Route path="/Бүтээгдэхүүнүүд" element={<Products />}/>
+            <Route path="/Захиалгууд" element={<Orders />} />
+            <Route path="/Хэрэглэгчид" element={<Users />}/>
+            <Route  path="/Модератор" element={<Moderators />} />
+            <Route  path="/Тохиргоо" element={<Settings />} />
+
           </Routes>
 
         </div>
-      <Footer />
+      
     </div>
   );
 }
