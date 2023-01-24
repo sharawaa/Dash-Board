@@ -32,3 +32,18 @@
     height: 40px;
     margin: 20px;
 }
+/*off canvas*/
+
+.off-moderator-top{
+    display: flex;
+}
+.off-moderator-footer-button{
+    width: 700px;
+    height: 50px;
+    background-color: 
+    #003585;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}

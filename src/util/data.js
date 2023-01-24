@@ -84,7 +84,7 @@ export const USERS = [
     email: "sra11schi@example.com",
   },
   {
-    id: "12345",
+    id: "2345",
     name: "Cарангэрэл",
     phone: "#15358",
     date: "2022/02/02",
@@ -216,7 +216,7 @@ export const orders = [
     status: "Идэвхитэй",
   },
   {
-    no: "#15358",
+    no: "#25634",
     date: "2022.12.02",
     phone: "80395252",
     eMail: "sra11schi...",
@@ -238,7 +238,7 @@ export const orders = [
     status: "Идэвхитэй",
   },
   {
-    no: "#15358",
+    no: "#5080",
     date: "2022.12.02",
     phone: "80395252",
     eMail: "sra11schi...",

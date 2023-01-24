@@ -21,21 +21,47 @@
 }
 .product-button {
   margin: 20px;
+  width: 160px;
 }
 /* off canvas css*/
-.offcanvas-header {
-  width: 600px;
-}
-.offcanvas-body {
-  width: 600px;
-}
 .offcanvas {
   width: 1000px !important;
-  background-color: aqua;
+  background-color: #F5F5F5;
 }
 .offcanvas-body {
-  width: 890px;
+  width: 800px;
+  margin: auto;
 }
-.offcanvas-body-image {
-  width: 890px;
+.offcanvas-body-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 700px;
+  height: 285px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
+.offcanvas-body-image-input-1{
+  width: 570px;
+  height: 140px;
+
+}
+.offcanvas-body p{
+margin-left: 10px ;
+}
+.offcanvas-body input{
+  width: 340px;
+  height: 32px;
+  margin-left: 10px;
+  border-radius: 5px;
+  }
+  .offcanvas-body-button{
+    width: 690px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 20px;
+    background-color: 
+    #003585;
+    color: #ffffff;
+    border-radius: 5px;
+  }
