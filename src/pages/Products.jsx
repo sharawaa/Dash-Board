@@ -17,7 +17,11 @@ export default function Products() {
         <section className="product-title">
           <p className="product-title-p">Бүтээгдэхүүнүүд</p>
         </section>
-        <Button variant="primary" onClick={handleShow} className="product-button">
+        <Button
+          variant="primary"
+          onClick={handleShow}
+          className="product-button"
+        >
           +Бараа нэмэх
         </Button>
 
@@ -31,106 +35,93 @@ export default function Products() {
             <Offcanvas.Title>Offcanvas</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className="offcanvas-body container">
-              <div className="offcanvas-body-image">
+            <div className="offcanvas-body-image">
+              <section>
+                <input className="offcanvas-body-image-input-1" type="text" />
+              </section>
+              <section>
+                <input type="text" />
+                <input type="text" />
+              </section>
+            </div>
+
+            <div className="d-flex">
+              <section>
                 <section>
-                  <input className="offcanvas-body-image-input-1" type="text" /></section>
-                <section>
+                  <p>Барааны нэр</p>
                   <input type="text" />
+                </section>
+                <section>
+                  <p>Үлдэгдэл</p>
+                  <input type="text" name="" id="" />
+                </section>
+              </section>
+
+              <section>
+                <section>
+                  <p>Барааны үнэ (₮)</p>
                   <input type="text" />
                 </section>
-              </div>
-            
-              <div className="d-flex">
                 <section>
-                  <section>
-                    <p>Барааны нэр</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Үлдэгдэл</p>
-                    <input type="text" name="" id="" />
-
-                  </section>
+                  <p>Хямдрал (%-иар)</p>
+                  <input type="text" name="" id="" />
                 </section>
-
+              </section>
+            </div>
+            <div className="d-flex">
+              <section>
                 <section>
-                  <section>
-                    <p>Барааны үнэ (₮)</p>
-                    <input type="text" />
-
-                  </section>
-                  <section>
-                    <p>Хямдрал (%-иар)</p>
-                    <input type="text" name="" id="" />
-                  </section>
-                </section>
-              </div>
-              <div className="d-flex">
-                
-                
-                <section>
-                  
-                  <section>
-                    <p>Багтаамж</p>
-                    <input type="text" name="" id="" />
-                  </section>
-                  <section>
-                    <p>Хүчдэл</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Хүчдэл</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Баталгаат хугацаа</p>
-                    <input type="text" />
-                  </section>
-                </section>
-
-                <section>
-                  <section>
-                    <p>Цахилгаан зарцуулалт</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Хэмжээ</p>
-                    <input type="text" name="" id="" />
-                  </section>
-                  <section>
-                    <p>Хэмжээ</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Тайлбар</p>
-                    <input type="text" />
-                  </section>
-                </section>
-
-              </div>
-              <div>
-                <section className="d-flex">
-                  <section>
-                    <p>Категори сонгох</p>
-                    <input type="text" />
-                  </section>
-                  <section>
-                    <p>Брэнд сонгох</p>
-                    <input type="text" />
-                  </section>
+                  <p>Багтаамж</p>
+                  <input type="text" name="" id="" />
                 </section>
                 <section>
-                  <button className="offcanvas-body-button">ХАДГАЛАХ</button>
+                  <p>Хүчдэл</p>
+                  <input type="text" />
                 </section>
+                <section>
+                  <p>Хүчдэл</p>
+                  <input type="text" />
+                </section>
+                <section>
+                  <p>Баталгаат хугацаа</p>
+                  <input type="text" />
+                </section>
+              </section>
 
-              </div>
-
-           
-
-
-
-
-
+              <section>
+                <section>
+                  <p>Цахилгаан зарцуулалт</p>
+                  <input type="text" />
+                </section>
+                <section>
+                  <p>Хэмжээ</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section>
+                  <p>Хэмжээ</p>
+                  <input type="text" />
+                </section>
+                <section>
+                  <p>Тайлбар</p>
+                  <input type="text" />
+                </section>
+              </section>
+            </div>
+            <div>
+              <section className="d-flex">
+                <section>
+                  <p>Категори сонгох</p>
+                  <input type="text" />
+                </section>
+                <section>
+                  <p>Брэнд сонгох</p>
+                  <input type="text" />
+                </section>
+              </section>
+              <section>
+                <button className="offcanvas-body-button">ХАДГАЛАХ</button>
+              </section>
+            </div>
           </Offcanvas.Body>
         </Offcanvas>
 
@@ -138,7 +129,7 @@ export default function Products() {
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Зураг</th>
+                <th scope="col">Барааны зураг</th>
                 <th scope="col">Барааны нэр</th>
                 <th scope="col">Үнэ</th>
                 <th scope="col">Үлдэгдэл</th>
@@ -151,11 +142,11 @@ export default function Products() {
             {products.map((unit) => (
               <Product
                 image={unit.image}
-                name={unit.productName}
+                name={unit.name}
                 price={unit.price}
                 sale={unit.sale}
                 category={unit.category}
-                remainder={unit.remainder}
+                remainder={unit.stock}
               />
             ))}
           </table>
