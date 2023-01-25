@@ -5,11 +5,14 @@ import React, { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-export default function Products() {
+export default function Products(prop) {
+  const { products } = prop;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [data, setProducts] = useState(data);
 
   return (
     <div className=" product-container ">
@@ -24,7 +27,6 @@ export default function Products() {
         >
           +Бараа нэмэх
         </Button>
-
         <Offcanvas
           placement="end"
           show={show}
