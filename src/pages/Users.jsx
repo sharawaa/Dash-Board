@@ -1,26 +1,42 @@
-import "../styles/users.css"
-import { USERS } from "../util/data"
-import User from "../components/mainComponents/User"
-export default function Users(){
-    return(
+import "../styles/users.css";
+import { USERS } from "../util/data";
+import User from "../components/mainComponents/User";
+export default function Users() {
+  return (
     <div className="users-container">
       <div className="users">
         <section className="users-title">
           <p className="users-title-p">Хэрэглэгчид</p>
         </section>
-            
+
         <section className="users-head">
-             <div className="btn-group users-head-button">
-                <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Бүгд
-                </button>
-                <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="##">Action</a></li>
-                <li><a className="dropdown-item" href="##">Another action</a></li>
-                
-              </ul>
-            </div>
-            <input type="text" placeholder="search" className="users-head-input" />
+          <div className="btn-group users-head-button">
+            <button
+              type="button"
+              className="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Бүгд
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="##">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="##">
+                  Another action
+                </a>
+              </li>
+            </ul>
+          </div>
+          <input
+            type="text"
+            placeholder="search"
+            className="users-head-input"
+          />
         </section>
 
         <section>
@@ -36,21 +52,20 @@ export default function Users(){
                 <th scope="col">Огноо</th>
               </tr>
             </thead>
-                {USERS.map((uni)=>(
-                  <User
-                  id={uni.id}
-                  name={uni.name}
-                  date={uni.date}
-                  order={uni.order}
-                  email={uni.email}
-                  sureName={uni.sureName}
-                  phone={uni.phone}
-                  />
-                ))}
+            {USERS.map((uni) => (
+              <User
+                id={uni.id}
+                name={uni.name}
+                date={uni.date}
+                order={uni.order}
+                email={uni.email}
+                sureName={uni.sureName}
+                phone={uni.phone}
+              />
+            ))}
           </table>
-            </section>
-           
-        </div>
+        </section>
       </div>
-    )
+    </div>
+  );
 }

@@ -10,22 +10,26 @@ import Orders from "./pages/Orders";
 import Settings from "./pages/Settings";
 import Control from "./pages/Control";
 import Moderators from "./pages/Moderators";
-//import { useEffect, useState } from "react";
-//import axios from "axios";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Order from "./components/mainComponents/Order";
 
 function App() {
-  //const [products, setProducts] = useState();
-  // fetch("http://localhost:2022/products")
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res));
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:2022/products")
-  //     .then((res) => console.log(res))
-  //     .then((products) => setProducts(products.data));
-  //     console.log(products.data)
-      
-  // });
+  const [products, setProducts] = useState();
+  const [order, setOrder] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:2022/products")
+      .then((product) => setProducts(product.data));
+  }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:2022/order")
+      .then((order) => setOrder(order.data));
+  }, []);
+  console.log(order);
+
   return (
     <div className="app">
       <Header />
@@ -36,9 +40,9 @@ function App() {
           <Route path="/" element={<Control />} />
           <Route
             path="/Бүтээгдэхүүнүүд"
-            element={<Products/>}
+            element={<Products products={products} />}
           />
-          <Route path="/Захиалгууд" element={<Orders />} />
+          <Route path="/Захиалгууд" element={<Orders orders={order} />} />
           <Route path="/Хэрэглэгчид" element={<Users />} />
           <Route path="/Модератор" element={<Moderators />} />
           <Route path="/Тохиргоо" element={<Settings />} />

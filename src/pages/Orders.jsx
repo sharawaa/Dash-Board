@@ -1,28 +1,44 @@
-import "../styles/orders.css"
+import "../styles/orders.css";
 
-import Order from "../components/mainComponents/Order"
-import { orders } from "../util/data"
-export default function Orders(){
-    return(
+import Order from "../components/mainComponents/Order";
+export default function Orders(prop) {
+  const { orders } = prop;
+  return (
     <div className="orders-container">
       <div className="orders">
-        <section className="orders-title"><p className="orders-title-p">Захиалгууд</p></section>
-
-
-        <section className="orders-header container">
-        <div className="btn-group orders-header-button">
-  <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Бүгд
-  </button>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="##">Action</a></li>
-    <li><a className="dropdown-item" href="##">Another action</a></li>
-    
-  </ul>
-</div>
-                <input className="orders-header-input" type="text" placeholder="Хайх" />
+        <section className="orders-title">
+          <p className="orders-title-p">Захиалгууд</p>
         </section>
 
+        <section className="orders-header container">
+          <div className="btn-group orders-header-button">
+            <button
+              type="button"
+              className="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Бүгд
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="##">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="##">
+                  Another action
+                </a>
+              </li>
+            </ul>
+          </div>
+          <input
+            className="orders-header-input"
+            type="text"
+            placeholder="Хайх"
+          />
+        </section>
 
         <section>
           <table className="table">
@@ -39,23 +55,22 @@ export default function Orders(){
                 <th scope="col">Статус</th>
               </tr>
             </thead>
-                {orders.map((unit)=>(
-                  <Order
-                  no={unit.no}
-                  date={unit.date}
-                  phone={unit.phone}
-                  email={unit.eMail}
-                  address={unit.address}
-                  number={unit.number}
-                  totalAmount={unit.totalAmount}
-                  payment={unit.payment}
-                  status={unit.status}
-                  
-                  />
-                ))}
+            {orders.map((unit) => (
+              <Order
+                no={unit.no}
+                date={unit.date}
+                phone={unit.phone}
+                email={unit.eMail}
+                address={unit.address}
+                number={unit.number}
+                totalAmount={unit.totalAmount}
+                payment={unit.payment}
+                status={unit.status}
+              />
+            ))}
           </table>
         </section>
       </div>
     </div>
-    )
+  );
 }
