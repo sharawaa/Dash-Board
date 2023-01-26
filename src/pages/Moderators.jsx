@@ -71,7 +71,7 @@ export default function Moderators(){
 
 
       <section>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Moderator</th>

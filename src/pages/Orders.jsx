@@ -10,13 +10,13 @@ export default function Orders(){
 
 
         <section className="orders-header container">
-        <div class="btn-group orders-header-button">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div className="btn-group orders-header-button">
+  <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Бүгд
   </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="##">Action</a></li>
-    <li><a class="dropdown-item" href="##">Another action</a></li>
+  <ul className="dropdown-menu">
+    <li><a className="dropdown-item" href="##">Action</a></li>
+    <li><a className="dropdown-item" href="##">Another action</a></li>
     
   </ul>
 </div>
@@ -25,7 +25,7 @@ export default function Orders(){
 
 
         <section>
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">Захиалга No</th>

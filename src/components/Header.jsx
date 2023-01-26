@@ -1,4 +1,8 @@
-import "../styles/header.css"
+// import React from "react";
+// import "../styles/header.css"
+
+
+
 
 import { useNavigate } from "react-router-dom";
 
@@ -20,14 +24,14 @@ export default function Header() {
       </a>
 
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content CloseModal container ">
+        <div className="modal-dialog">
+          <div className="modal-content CloseModal container ">
             <section>
               <img src="./image/asullt.svg" alt="" />
             </section>
@@ -44,7 +48,7 @@ export default function Header() {
                 {" "}
                 Тийм
               </button>
-              <button class="no" data-bs-dismiss="modal">
+              <button className="no" data-bs-dismiss="modal">
                 Үгүй
               </button>
             </section>

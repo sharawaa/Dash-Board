@@ -74,7 +74,7 @@ export default function SideMenu() {
             navigate("/Тохиргоо");
           }}
         >
-          <img src="./image/wrench6.svg" alt="" /> Тохиргоо
+          <img src="./wrench6.svg" alt="" /> Тохиргоо
         </button>
 
         <img src="" alt="" />

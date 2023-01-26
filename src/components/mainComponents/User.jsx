@@ -19,9 +19,10 @@ export default function User(props){
                 <td>{props.phone}</td>
                 <td>{props.order}</td>
                 <td>{props.date}</td>
-                <Button variant="primary" onClick={handleShow}>
+                <td><Button variant="primary" onClick={handleShow}>
         :
-      </Button>
+      </Button></td>
+                
                 </tr>
             </tbody>
             <Offcanvas show={show} placement="end" onHide={handleClose}>

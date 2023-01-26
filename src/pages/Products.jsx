@@ -5,14 +5,18 @@ import React, { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { propTypes } from "react-bootstrap/esm/Image";
+
 
 export default function Products(prop) {
-  const { products } = prop;
+  //const { products } = prop;
+
+  /* */
+  const [userName1, setProductName] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [data, setProducts] = useState(data);
+  //const [data, setProducts] = useState(data);
+  
 
   return (
     <div className=" product-container ">
@@ -51,7 +55,7 @@ export default function Products(prop) {
               <section>
                 <section>
                   <p>Барааны нэр</p>
-                  <input type="text" />
+                  <input type="text" onChange={(e) => setProductName(e.target.value)} />
                 </section>
                 <section>
                   <p>Үлдэгдэл</p>
@@ -80,10 +84,7 @@ export default function Products(prop) {
                   <p>Хүчдэл</p>
                   <input type="text" />
                 </section>
-                <section>
-                  <p>Хүчдэл</p>
-                  <input type="text" />
-                </section>
+                
                 <section>
                   <p>Баталгаат хугацаа</p>
                   <input type="text" />
@@ -95,10 +96,7 @@ export default function Products(prop) {
                   <p>Цахилгаан зарцуулалт</p>
                   <input type="text" />
                 </section>
-                <section>
-                  <p>Хэмжээ</p>
-                  <input type="text" name="" id="" />
-                </section>
+                
                 <section>
                   <p>Хэмжээ</p>
                   <input type="text" />
@@ -121,14 +119,14 @@ export default function Products(prop) {
                 </section>
               </section>
               <section>
-                <button className="offcanvas-body-button">ХАДГАЛАХ</button>
+                <button  className="offcanvas-body-button">ХАДГАЛАХ</button>
               </section>
             </div>
           </Offcanvas.Body>
         </Offcanvas>
 
         <section className="product-table">
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">Барааны зураг</th>

@@ -20,9 +20,8 @@ export default function Order(props){
                     <td>{props.number}</td>
                     <td>{props.totalAmount}</td>
                     <td>{props.payment}</td>
-                <Button className="order-button" onClick={handleShow}>
-        Launch
-      </Button>
+                    <td><Button className="order-button" onClick={handleShow}>Launch </Button></td>
+                
                 </tr>
 
             <Offcanvas show={show} placement="end" onHide={handleClose}>
