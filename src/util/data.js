@@ -185,62 +185,7 @@
 //   },
 // ];
 
-export const USERS = [
-  {
-    id: "12345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-  {
-    id: "2345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-  {
-    id: "12345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-  {
-    id: "12345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-  {
-    id: "12345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-  {
-    id: "12345",
-    name: "Cарангэрэл",
-    phone: "#15358",
-    date: "2022/02/02",
-    order: "3",
-    sureName: "Батравдан",
-    email: "sra11schi@example.com",
-  },
-];
+
 export const moderat = [
   {
     moderator: "#1234",

@@ -1,7 +1,8 @@
 import "../styles/users.css";
-import { USERS } from "../util/data";
+
 import User from "../components/mainComponents/User";
-export default function Users() {
+export default function Users(prop) {
+  const {users} = prop
   return (
     <div className="users-container">
       <div className="users">
@@ -52,7 +53,7 @@ export default function Users() {
                 <th scope="col">Огноо</th>
               </tr>
             </thead>
-            {USERS.map((uni) => (
+            {users && users.map((uni) => (
               <User
                 id={uni.id}
                 name={uni.name}

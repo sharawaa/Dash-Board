@@ -1,5 +1,5 @@
-// import React from "react";
-// import "../styles/header.css"
+ import React from "react";
+ import "../styles/header.css"
 
 import { useNavigate } from "react-router-dom";
 
@@ -15,11 +15,11 @@ export default function Header() {
         <button className="aSearchButton">Search</button>
       </section>
 
-      {/* <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="##">
+      <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="##">
         <img src="./image/logout_admin.svg" alt="" />
-      </a> */}
+      </a>
 
-      {/* <div
+ <div
         className="modal fade"
         id="exampleModal"
         tabIndex="-1"
@@ -50,7 +50,7 @@ export default function Header() {
             </section>
           </div>
         </div>
-      </div> */}
+      </div> 
     </div>
   );
 }

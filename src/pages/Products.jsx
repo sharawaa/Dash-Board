@@ -5,24 +5,18 @@ import React, { useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Example from "./newmodal";
+import NewModal from "./NewModal";
 
 export default function Products(prop) {
   const { products } = prop;
 
   /* */
-  const [userName1, setProductName] = useState("");
-  const [price, setPrice] = useState("");
-  const [duraaraa, setDuraaraa] = useState("");
-  let obj = [
-    {
-      price,
-    },
-  ];
+
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
   //const [data, setProducts] = useState(data);
 
   return (
@@ -31,6 +25,7 @@ export default function Products(prop) {
         <section className="product-title">
           <p className="product-title-p">Бүтээгдэхүүнүүд</p>
         </section>
+      
         <Button
           variant="primary"
           onClick={handleShow}
@@ -64,7 +59,7 @@ export default function Products(prop) {
                   <p>Барааны нэр</p>
                   <input
                     type="text"
-                    onChange={(e) => setProductName(e.target.value)}
+                    // onChange={(e) => setProductName(e.target.value)}
                   />
                 </section>
                 <section>
@@ -73,7 +68,7 @@ export default function Products(prop) {
                     type="text"
                     name=""
                     id=""
-                    onChange={(e) => setDuraaraa(e.target.value)}
+                    // onChange={(e) => residual(e.target.value)}
                   />
                 </section>
               </section>
@@ -83,7 +78,7 @@ export default function Products(prop) {
                   <p>Барааны үнэ (₮)</p>
                   <input
                     type="text"
-                    onChange={(e) => setPrice(e.target.value)}
+                    //onChange={(e) => setPrice(e.target.value)}
                   />
                 </section>
                 <section>
@@ -93,17 +88,34 @@ export default function Products(prop) {
               </section>
             </div>
 
-            <Example />
+            <div className="product-modal">
+              <NewModal products={products} />
+            </div>
+
+            <div className="product-indicator">
+
+
+
+            </div>
 
             <div>
               <section className="d-flex">
                 <section>
                   <p>Категори сонгох</p>
-                  <input type="text" />
+                  <select id="country" name="country">
+                    <option value="appliances">appliances</option>
+                    <option value="computers & tablets">computers & tablets</option>
+                    <option value="gaming console">gaming console</option>
+                    <option value="telescope">telescope</option>
+                  </select>
                 </section>
                 <section>
                   <p>Брэнд сонгох</p>
-                  <input type="text" />
+                  <select id="country" name="country">
+                    <option value="samsung">Samsung</option>
+                    <option value="apple">Apple</option>
+                    
+                  </select>
                 </section>
               </section>
               <section>

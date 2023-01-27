@@ -1,12 +1,13 @@
 import "../styles/moderator.css"
 import Moderator from "../components/mainComponents/Moderator"
-import { moderat } from "../util/data"
+
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
-export default function Moderators(){
+export default function Moderators(prop){
+const {moderators} = prop;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -83,7 +84,7 @@ export default function Moderators(){
               <th scope="col">Огноо</th>
             </tr>
           </thead>
-              {moderat.map((uni)=>(
+              {moderators && moderators.map((uni)=>(
                 <Moderator
                 moderator={uni.moderator}
                 sureName={uni.sureName}

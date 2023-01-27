@@ -55,7 +55,7 @@ export default function Orders(prop) {
                 <th scope="col">Статус</th>
               </tr>
             </thead>
-            {orders.map((unit) => (
+            {orders && orders.map((unit) => (
               <Order
                 no={unit.no}
                 date={unit.date}
