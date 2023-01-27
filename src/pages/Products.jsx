@@ -2,21 +2,21 @@
 import Product from "../components/mainComponents/Product";
 import "../styles/products.css";
 import React, { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import NewModal from "./NewModal";
+
+import ProductCanvas from "../components/mainComponents/ProductCanvas";
 
 export default function Products(prop) {
-  const { products } = prop;
-
   /* */
-
-
+  const { products } = prop;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
+  console.log();
+
   //const [data, setProducts] = useState(data);
 
   return (
@@ -25,7 +25,7 @@ export default function Products(prop) {
         <section className="product-title">
           <p className="product-title-p">Бүтээгдэхүүнүүд</p>
         </section>
-      
+
         <Button
           variant="primary"
           onClick={handleShow}
@@ -39,90 +39,7 @@ export default function Products(prop) {
           onHide={handleClose}
           className="offcanvas"
         >
-          <Offcanvas.Header closeButton className="offcanvas-header">
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body className="offcanvas-body container">
-            <div className="offcanvas-body-image">
-              <section>
-                <input className="offcanvas-body-image-input-1" type="text" />
-              </section>
-              <section>
-                <input type="text" />
-                <input type="text" />
-              </section>
-            </div>
-
-            <div className="d-flex">
-              <section>
-                <section>
-                  <p>Барааны нэр</p>
-                  <input
-                    type="text"
-                    // onChange={(e) => setProductName(e.target.value)}
-                  />
-                </section>
-                <section>
-                  <p>Үлдэгдэл</p>
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    // onChange={(e) => residual(e.target.value)}
-                  />
-                </section>
-              </section>
-
-              <section>
-                <section>
-                  <p>Барааны үнэ (₮)</p>
-                  <input
-                    type="text"
-                    //onChange={(e) => setPrice(e.target.value)}
-                  />
-                </section>
-                <section>
-                  <p>Хямдрал (%-иар)</p>
-                  <input type="text" name="" id="" />
-                </section>
-              </section>
-            </div>
-
-            <div className="product-modal">
-              <NewModal products={products} />
-            </div>
-
-            <div className="product-indicator">
-
-
-
-            </div>
-
-            <div>
-              <section className="d-flex">
-                <section>
-                  <p>Категори сонгох</p>
-                  <select id="country" name="country">
-                    <option value="appliances">appliances</option>
-                    <option value="computers & tablets">computers & tablets</option>
-                    <option value="gaming console">gaming console</option>
-                    <option value="telescope">telescope</option>
-                  </select>
-                </section>
-                <section>
-                  <p>Брэнд сонгох</p>
-                  <select id="country" name="country">
-                    <option value="samsung">Samsung</option>
-                    <option value="apple">Apple</option>
-                    
-                  </select>
-                </section>
-              </section>
-              <section>
-                <button className="offcanvas-body-button">ХАДГАЛАХ</button>
-              </section>
-            </div>
-          </Offcanvas.Body>
+          <ProductCanvas />
         </Offcanvas>
 
         <section className="product-table">

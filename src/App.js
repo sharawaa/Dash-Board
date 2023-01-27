@@ -13,13 +13,11 @@ import Moderators from "./pages/Moderators";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
-
 function App() {
   const [products, setProducts] = useState();
   const [orders, setOrder] = useState();
-  const [moderators, setModerators]= useState();
-  const [users , setUsers] = useState();
+  const [moderators, setModerators] = useState();
+  const [users, setUsers] = useState();
 
   useEffect(() => {
     axios
@@ -31,15 +29,16 @@ function App() {
       .get("http://localhost:2022/orders")
       .then((orders) => setOrder(orders.data));
   }, []);
-  useEffect(()=>{
-    axios.get("http://localhost:2022/moderators")
-    .then((moderators)=>setModerators(moderators.data))
-  })
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .get("http://localhost:2022/users")
-    .then((users)=>setUsers(users.data))
-  })
+      .get("http://localhost:2022/moderators")
+      .then((moderators) => setModerators(moderators.data));
+  });
+  useEffect(() => {
+    axios
+      .get("http://localhost:2022/users")
+      .then((users) => setUsers(users.data));
+  });
 
   return (
     <div className="app">
@@ -55,7 +54,10 @@ function App() {
           />
           <Route path="/Захиалгууд" element={<Orders orders={orders} />} />
           <Route path="/Хэрэглэгчид" element={<Users users={users} />} />
-          <Route path="/Модератор" element={<Moderators moderators={moderators} />} />
+          <Route
+            path="/Модератор"
+            element={<Moderators moderators={moderators} />}
+          />
           <Route path="/Тохиргоо" element={<Settings />} />
         </Routes>
       </div>
