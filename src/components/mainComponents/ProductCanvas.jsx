@@ -6,7 +6,7 @@ import axios from "axios";
 export default function ProductCanvas(prop) {
   const [addIndicator, setAddIndicator] = useState([]);
   const { products } = prop;
-  const [addProduct, setAddProduct] = useState();
+  //const [addProduct, setAddProduct] = useState();
   function productSave(e) {
     e.preventDefault();
     axios.post("http://localhost:2022/products", {
@@ -16,10 +16,6 @@ export default function ProductCanvas(prop) {
       sale: e.target.productSale.value,
       category: e.target.category.value,
     });
-    console.log(e.target.productName.value);
-    console.log(e.target.productStock.value);
-    console.log(e.target.productPrice.value);
-    console.log(e.target.productSale.value);
   }
   return (
     <>
@@ -27,6 +23,7 @@ export default function ProductCanvas(prop) {
         <Offcanvas.Title>Offcanvas</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className="offcanvas-body container">
+        <form onSubmit={productSave}>
         <div className="offcanvas-body-image">
           <section>
             <input
@@ -37,7 +34,7 @@ export default function ProductCanvas(prop) {
           </section>
         </div>
 
-        <form className="d-flex" onSubmit={productSave}>
+        <div className="d-flex" >
           <section>
             <section>
               <p>Барааны нэр</p>
@@ -59,6 +56,7 @@ export default function ProductCanvas(prop) {
               <input type="text" name="productSale" id="" />
             </section>
           </section>
+          </div>
 
           <div className="product-modal">
             <NewModal
@@ -108,6 +106,7 @@ export default function ProductCanvas(prop) {
               </button>
             </section>
           </div>
+        
         </form>
       </Offcanvas.Body>
     </>

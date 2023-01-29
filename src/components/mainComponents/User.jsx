@@ -15,12 +15,12 @@ export default function User(props){
                 <td>{props.id}</td>
                 <td>{props.sureName}</td>
                 <td>{props.name}</td>
-                <td>{props.email}</td>
+                <td>{props.email.slice(0,5)}...</td>
                 <td>{props.phone}</td>
                 <td>{props.order}</td>
                 <td>{props.date}</td>
-                <td><Button variant="primary" onClick={handleShow}>
-        :
+                <td><Button variant="white" onClick={handleShow}>
+        <img src="./image/treeTseg.svg" alt="" />
       </Button></td>
                 
                 </tr>

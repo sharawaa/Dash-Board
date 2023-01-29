@@ -52,13 +52,14 @@ export default function Products(prop) {
                 <th scope="col">Үлдэгдэл</th>
                 <th scope="col">Хямдрал %</th>
                 <th scope="col">Категори</th>
-                <th scope="col">:</th>
+                <th scope="col"></th>
               </tr>
             </thead>
 
             {products &&
               products.map((unit) => (
                 <Product
+                  data={unit}
                   image={unit.image}
                   name={unit.name}
                   price={unit.price}

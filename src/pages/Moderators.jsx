@@ -4,6 +4,7 @@ import Moderator from "../components/mainComponents/Moderator"
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import axios from "axios";
 
 
 export default function Moderators(prop){
@@ -12,6 +13,18 @@ const {moderators} = prop;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  function moderatSave(e){
+    e.preventDefault()
+    axios.post("http://localhost:2022/moderators",{
+      sureName: e.target.sureName.value,
+      name: e.target.name.value,
+      eMail: e.target.eMail.value,
+      phone: e.target.phoneNumber.value,
+
+    })
+  }
     return(
   <div className="moderator-container">
     <div className="moderator">
@@ -31,41 +44,43 @@ const {moderators} = prop;
           <Offcanvas.Title>Модератор нэмэх</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="container">
-            <section className="off-moderator-top">
-              <section >
-                <section>
-                  <p>Овог</p>
-                  <input type="text" />
-                </section>
-                <section>
-                  <p>Утасны дугаар</p>
-                  <input type="text" />
-                </section>
+          <form onSubmit={moderatSave}>
+            <div className="container">
+              <section className="off-moderator-top">
+                <section >
+                  <section>
+                    <p>Овог</p>
+                    <input type="text" name="sureName" />
+                  </section>
+                  <section>
+                    <p>Утасны дугаар</p>
+                    <input type="text" name="phoneNumber"/>
+                  </section>
 
-              </section>
-              <section>
-                <section>
-                  <p>Нэр</p>
-                  <input type="text" />
                 </section>
                 <section>
-                  <p>И-мэйл хаяг</p>
-                  <input type="text" />
+                  <section>
+                    <p>Нэр</p>
+                    <input type="text" name="name"/>
+                  </section>
+                  <section>
+                    <p>И-мэйл хаяг</p>
+                    <input type="text" name="eAddress"/>
+                  </section>
                 </section>
+                
               </section>
+
               
-            </section>
 
-            
+              <section className="off-moderator-footer">
+                <p>Нууц үг</p>
+                <input type="password" name="password" />
+                <button className="off-moderator-footer-button" type="submit">ХАДГАЛАХ</button>
+              </section>
 
-            <section className="off-moderator-footer">
-              <p>Нууц үг</p>
-              <input type="password" />
-              <button className="off-moderator-footer-button">ХАДГАЛАХ</button>
-            </section>
-
-          </div>
+            </div>
+          </form>
         </Offcanvas.Body>
       </Offcanvas>
 
