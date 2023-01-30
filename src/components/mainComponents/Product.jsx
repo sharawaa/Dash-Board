@@ -1,11 +1,15 @@
+import axios from "axios";
 import EditCanvas from "./EditCanvas";
 
-
-
 export default function Product(props) {
-  const data= props.data;
+  const data = props.data;
+
+  function DeleteHandler(id) {
+    axios.delete(`http://localhost:2022/products/${id}`);
+  }
+
   return (
-    <tbody> 
+    <tbody>
       <tr>
         <td>
           <img
@@ -20,18 +24,29 @@ export default function Product(props) {
         <td>{props.remainder}</td>
         <td>{props.sale}</td>
         <td>{props.category}</td>
-          
+
         <td>
-         
-        <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="./image/treeTseg.svg" alt="" />
-        </button>
+          <button
+            class="btn "
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="./image/treeTseg.svg" alt="" />
+          </button>
           <ul class="dropdown-menu">
-            <li><EditCanvas data={data} /></li>
-            <li><a class="dropdown-item" href="##">Устгах</a></li>
-            <li><a class="dropdown-item" href="##">Вебсайтаас нуух</a></li>
+            <li>
+              <EditCanvas data={data} />
+            </li>
+            <li>
+              <button onClick={() => DeleteHandler(data.id)}>ustgah</button>
+            </li>
+            <li>
+              <a class="dropdown-item" href="##">
+                Вебсайтаас нуух
+              </a>
+            </li>
           </ul>
-    
         </td>
       </tr>
     </tbody>

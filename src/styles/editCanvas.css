@@ -1,23 +1,18 @@
-.editCanvas{
-    height: 90vh;
-    display: flex;
+.editCanvas {
+  height: 90vh;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-    
 }
 
-
-.editCanvas-img img{
-    width: 300px;
-    height: 300px;
+.editCanvas-img img {
 }
-.editCanvas-button{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 400px;
-    height: 40px;
-    background-color: 
-    #003585;
-    color: #fff;
+.editCanvas-button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 400px;
+  height: 40px;
+  background-color: #003585;
+  color: #fff;
 }
