@@ -16,6 +16,7 @@ export default function ProductCanvas(prop) {
       sale: e.target.productSale.value,
       category: e.target.category.value,
     });
+    
   }
   return (
     <>

@@ -2,12 +2,27 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../../styles/editCanvas.css";
+import axios from "axios";
 
 export default function EditCanvas(props) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  
+
+  function editProduct(e, id){
+    e.preventDefault()
+    axios.put(`http://localhost:2022/products/${id}`,{
+      image: e.target.productImage.value,
+      name: e.target.productName.value,
+      stock: e.target.productStock.value,
+      price:e.target.productPrice.value,
+      sale: e.target.productSale.value,
+     })
+
+   console.log("uurchlugdsun une",e.target.productPrice.value)
+  }
 
   return (
     <>
@@ -20,12 +35,13 @@ export default function EditCanvas(props) {
           <Offcanvas.Title>Өөрчлөх</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="container editCanvas">
+          <form className="container editCanvas" onSubmit={editProduct}>
             <div className="editCanvas-img">
-              <p>Барааны нэр</p>
+              <p>Барааны зураг</p>
               <input
                 type="text"
                 name="productImage"
+                
                 defaultValue={props.data.image}
               />
             </div>
@@ -37,6 +53,7 @@ export default function EditCanvas(props) {
                   <input
                     type="text"
                     name="productName"
+                    
                     defaultValue={props.data.name}
                   />
                 </section>
@@ -72,9 +89,9 @@ export default function EditCanvas(props) {
             </div>
 
             <div>
-              <button className="editCanvas-button">ХАДГАЛАХ</button>
+              <button className="editCanvas-button" type="submit" >ХАДГАЛАХ</button>
             </div>
-          </div>
+          </form>
         </Offcanvas.Body>
       </Offcanvas>
     </>
