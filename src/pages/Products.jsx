@@ -72,7 +72,6 @@ export default function Products(prop) {
         </section>
         <section></section>
       </div>
-      ;
     </div>
   );
 }

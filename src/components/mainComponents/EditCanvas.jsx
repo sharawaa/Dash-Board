@@ -9,19 +9,17 @@ export default function EditCanvas(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
-
-  function editProduct(e, id){
-    e.preventDefault()
-    axios.put(`http://localhost:2022/products/${id}`,{
+  function editProduct(e, id) {
+    e.preventDefault();
+    axios.put(`http://localhost:2022/products/${id}`, {
       image: e.target.productImage.value,
       name: e.target.productName.value,
       stock: e.target.productStock.value,
-      price:e.target.productPrice.value,
+      price: e.target.productPrice.value,
       sale: e.target.productSale.value,
-     })
+    });
 
-   console.log("uurchlugdsun une",e.target.productPrice.value)
+    //console.log("uurchlugdsun une",e.target.productPrice.value)
   }
 
   return (
@@ -41,7 +39,6 @@ export default function EditCanvas(props) {
               <input
                 type="text"
                 name="productImage"
-                
                 defaultValue={props.data.image}
               />
             </div>
@@ -53,7 +50,6 @@ export default function EditCanvas(props) {
                   <input
                     type="text"
                     name="productName"
-                    
                     defaultValue={props.data.name}
                   />
                 </section>
@@ -89,7 +85,9 @@ export default function EditCanvas(props) {
             </div>
 
             <div>
-              <button className="editCanvas-button" type="submit" >ХАДГАЛАХ</button>
+              <button className="editCanvas-button" type="submit">
+                ХАДГАЛАХ
+              </button>
             </div>
           </form>
         </Offcanvas.Body>

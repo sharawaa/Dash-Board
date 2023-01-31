@@ -7,17 +7,22 @@ export default function ProductCanvas(prop) {
   const [addIndicator, setAddIndicator] = useState([]);
   const { products } = prop;
   //const [addProduct, setAddProduct] = useState();
+
   function productSave(e) {
     e.preventDefault();
-    axios.post("http://localhost:2022/products", {
+    let object = {
       name: e.target.productName.value,
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
       category: e.target.category.value,
-    });
-    
+    };
+    axios
+      .post("http://localhost:2022/products", object)
+      .then((res) => console.log(res));
+    console.log(object);
   }
+
   return (
     <>
       <Offcanvas.Header closeButton className="offcanvas-header">
@@ -25,38 +30,38 @@ export default function ProductCanvas(prop) {
       </Offcanvas.Header>
       <Offcanvas.Body className="offcanvas-body container">
         <form onSubmit={productSave}>
-        <div className="offcanvas-body-image">
-          <section>
-            <input
-              className="offcanvas-body-image-input-1"
-              name="productImage"
-              type="text"
-            />
-          </section>
-        </div>
+          <div className="offcanvas-body-image">
+            <section>
+              <input
+                className="offcanvas-body-image-input-1"
+                name="productImage"
+                type="text"
+              />
+            </section>
+          </div>
 
-        <div className="d-flex" >
-          <section>
+          <div className="d-flex">
             <section>
-              <p>Барааны нэр</p>
-              <input type="text" name="productName" />
+              <section>
+                <p>Барааны нэр</p>
+                <input type="text" name="productName" />
+              </section>
+              <section>
+                <p>Үлдэгдэл</p>
+                <input type="text" name="productStock" />
+              </section>
             </section>
-            <section>
-              <p>Үлдэгдэл</p>
-              <input type="text" name="productStock" />
-            </section>
-          </section>
 
-          <section>
             <section>
-              <p>Барааны үнэ (₮)</p>
-              <input type="text" name="productPrice" />
+              <section>
+                <p>Барааны үнэ (₮)</p>
+                <input type="text" name="productPrice" />
+              </section>
+              <section>
+                <p>Хямдрал (%-иар)</p>
+                <input type="text" name="productSale" id="" />
+              </section>
             </section>
-            <section>
-              <p>Хямдрал (%-иар)</p>
-              <input type="text" name="productSale" id="" />
-            </section>
-          </section>
           </div>
 
           <div className="product-modal">
@@ -107,7 +112,6 @@ export default function ProductCanvas(prop) {
               </button>
             </section>
           </div>
-        
         </form>
       </Offcanvas.Body>
     </>

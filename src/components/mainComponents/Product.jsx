@@ -27,14 +27,14 @@ export default function Product(props) {
 
         <td>
           <button
-            class="btn "
+            className="btn "
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             <img src="./image/treeTseg.svg" alt="" />
           </button>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li>
               <EditCanvas data={data} />
             </li>
@@ -42,7 +42,7 @@ export default function Product(props) {
               <button onClick={() => DeleteHandler(data.id)}>ustgah</button>
             </li>
             <li>
-              <a class="dropdown-item" href="##">
+              <a className="dropdown-item" href="##">
                 Вебсайтаас нуух
               </a>
             </li>
