@@ -16,6 +16,7 @@ export default function ProductCanvas(prop) {
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
       category: e.target.category.value,
+      id: uuidv4(),
     };
     axios
       .post("http://localhost:2022/products", object)
