@@ -19,7 +19,8 @@ export default function EditCanvas(props) {
       sale: e.target.productSale.value,
     });
 
-    //console.log("uurchlugdsun une",e.target.productPrice.value)
+
+    console.log("uurchlugdsun une",e.target.productPrice.value)
   }
 
   return (

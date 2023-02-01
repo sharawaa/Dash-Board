@@ -6,22 +6,25 @@ import axios from "axios";
 export default function ProductCanvas(prop) {
   const [addIndicator, setAddIndicator] = useState([]);
   const { products } = prop;
+  
   //const [addProduct, setAddProduct] = useState();
 
   function productSave(e) {
+    
     e.preventDefault();
     let object = {
+      image:e.target.productImage.value,
       name: e.target.productName.value,
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
       category: e.target.category.value,
-      id: uuidv4(),
+      
     };
     axios
       .post("http://localhost:2022/products", object)
       .then((res) => console.log(res));
-    console.log(object);
+   window.location.reload()
   }
 
   return (
@@ -109,7 +112,7 @@ export default function ProductCanvas(prop) {
               {" "}
               <button className="offcanvas-body-button" type="submit">
                 {" "}
-                ХАДГАЛАХ uuid tatah
+                ХАДГАЛАХ
               </button>
             </section>
           </div>
