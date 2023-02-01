@@ -3,24 +3,28 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../../styles/editCanvas.css";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 export default function EditCanvas(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function editProduct(e, id) {
+  function editProduct(e) {
     e.preventDefault();
-    axios.put(`http://localhost:2022/products/${id}`, {
+    axios.put(`http://localhost:2022/products/${props.data.id}`, {
       image: e.target.productImage.value,
       name: e.target.productName.value,
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
+      id: uuidv4(),
     });
-
-
-    console.log("uurchlugdsun une",e.target.productPrice.value)
+    console.log("id:", props.data.id);
+    console.log(e.target.productStock.value);
+    console.log(e.target.productPrice.value);
+    console.log(e.target.productSale.value);
+    console.log(e.target.productName.value);
   }
 
   return (
@@ -62,6 +66,15 @@ export default function EditCanvas(props) {
                     defaultValue={props.data.stock}
                   />
                 </section>
+
+                <section>
+                  <p>Category</p>
+                  <input
+                    type="text"
+                    name="productStock"
+                    defaultValue={props.data.category}
+                  />
+                </section>
               </section>
 
               <section>
@@ -80,6 +93,15 @@ export default function EditCanvas(props) {
                     name="productSale"
                     id=""
                     defaultValue={props.data.sale}
+                  />
+                </section>
+                <section>
+                  <p>tailbar</p>
+                  <input
+                    type="text"
+                    name="productSale"
+                    id=""
+                    defaultValue={props.data.description}
                   />
                 </section>
               </section>
