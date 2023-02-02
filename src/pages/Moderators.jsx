@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import axios from "axios";
-
+import { v4 as uuidv4 } from "uuid";
 
 export default function Moderators(prop){
 const {moderators} = prop;
@@ -22,8 +22,11 @@ const {moderators} = prop;
       name: e.target.name.value,
       eMail: e.target.eMail.value,
       phone: e.target.phoneNumber.value,
+      id: uuidv4(),
+      
 
-    })
+    }).then((res) => console.log(res));
+    console.log(e.target.phoneNumber.value,)
   }
     return(
   <div className="moderator-container">
