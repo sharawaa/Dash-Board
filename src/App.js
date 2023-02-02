@@ -48,6 +48,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Control />} />
+
           <Route
             path="/Бүтээгдэхүүнүүд"
             element={<Products products={products} />}

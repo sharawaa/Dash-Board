@@ -18,7 +18,7 @@ export default function EditCanvas(props) {
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
-      id: uuidv4(),
+      id: props.data.id,
     });
     console.log("id:", props.data.id);
     console.log(e.target.productStock.value);
