@@ -34,12 +34,12 @@ function App() {
     axios
       .get("http://localhost:2022/moderators")
       .then((moderators) => setModerators(moderators.data));
-  });
+  }, []);
   useEffect(() => {
     axios
       .get("http://localhost:2022/users")
       .then((users) => setUsers(users.data));
-  });
+  }, []);
 
   return (
     <div className="app">
@@ -51,8 +51,8 @@ function App() {
           <Route path="/" element={<Control />} />
 
           <Route
-            path="/products"
-            element={<Products products={ products} />}
+            path="/products/page/:id"
+            element={<Products products={products && products} />}
           />
           <Route path="/orders" element={<Orders orders={orders} />} />
           <Route path="/users" element={<Users users={users} />} />
@@ -61,40 +61,7 @@ function App() {
             element={<Moderators moderators={moderators} />}
           />
           <Route path="/settings" element={<Settings />} />
-
-
-
-          
-    <Route path="/products/page/1" element={products &&
-              products.slice(0,8).map((unit) => (
-                <Product
-                  data={unit}
-                  image={unit.image}
-                  name={unit.name}
-                  price={unit.price}
-                  sale={unit.sale}
-                  category={unit.category}
-                  remainder={unit.stock}
-                />
-              ))} />
-              <Route path="products/page/2" element={products &&
-              products.slice(8,16).map((unit) => (
-                <Product
-                  data={unit}
-                  image={unit.image}
-                  name={unit.name}
-                  price={unit.price}
-                  sale={unit.sale}
-                  category={unit.category}
-                  remainder={unit.stock}
-                />
-              ))} />
-
-
-
         </Routes>
-
-        
       </div>
     </div>
   );

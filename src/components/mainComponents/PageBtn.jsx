@@ -1,4 +1,6 @@
-export default function PageBtn(prop){
-    const {BtnName, btnClass }=prop
-    return<button className={btnClass}>1</button>
+import "../../styles/pagination.css";
+
+export default function PageBtn(prop) {
+  const { btnName, btnClass } = prop;
+  return <button className={btnClass}>{btnName}</button>;
 }

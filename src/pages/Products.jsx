@@ -5,20 +5,18 @@ import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import Button from "react-bootstrap/Button";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Router, Routes, useParams } from "react-router-dom";
 
 import ProductCanvas from "../components/mainComponents/ProductCanvas";
 import Pagination from "../components/Pagination";
 
-
 export default function Products(prop) {
   /* */
+
   const { products } = prop;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  console.log();
 
   //const [data, setProducts] = useState(data);
 
@@ -58,12 +56,11 @@ export default function Products(prop) {
                 <th scope="col"></th>
               </tr>
             </thead>
-            <Outlet />
-            
+            <Product products={products} />
           </table>
         </section>
         <section>
-        <Pagination />
+          <Pagination />
         </section>
       </div>
     </div>
