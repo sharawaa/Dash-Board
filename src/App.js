@@ -12,6 +12,7 @@ import Control from "./pages/Control";
 import Moderators from "./pages/Moderators";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Product from "./components/mainComponents/Product";
 
 function App() {
   const [products, setProducts] = useState();
@@ -50,17 +51,50 @@ function App() {
           <Route path="/" element={<Control />} />
 
           <Route
-            path="/Бүтээгдэхүүнүүд"
-            element={<Products products={products} />}
+            path="/products"
+            element={<Products products={ products} />}
           />
-          <Route path="/Захиалгууд" element={<Orders orders={orders} />} />
-          <Route path="/Хэрэглэгчид" element={<Users users={users} />} />
+          <Route path="/orders" element={<Orders orders={orders} />} />
+          <Route path="/users" element={<Users users={users} />} />
           <Route
-            path="/Модератор"
+            path="/moderats"
             element={<Moderators moderators={moderators} />}
           />
-          <Route path="/Тохиргоо" element={<Settings />} />
+          <Route path="/settings" element={<Settings />} />
+
+
+
+          
+    <Route path="/products/page/1" element={products &&
+              products.slice(0,8).map((unit) => (
+                <Product
+                  data={unit}
+                  image={unit.image}
+                  name={unit.name}
+                  price={unit.price}
+                  sale={unit.sale}
+                  category={unit.category}
+                  remainder={unit.stock}
+                />
+              ))} />
+              <Route path="products/page/2" element={products &&
+              products.slice(8,16).map((unit) => (
+                <Product
+                  data={unit}
+                  image={unit.image}
+                  name={unit.name}
+                  price={unit.price}
+                  sale={unit.sale}
+                  category={unit.category}
+                  remainder={unit.stock}
+                />
+              ))} />
+
+
+
         </Routes>
+
+        
       </div>
     </div>
   );

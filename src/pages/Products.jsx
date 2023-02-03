@@ -5,8 +5,11 @@ import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import Button from "react-bootstrap/Button";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 import ProductCanvas from "../components/mainComponents/ProductCanvas";
+import Pagination from "../components/Pagination";
+
 
 export default function Products(prop) {
   /* */
@@ -55,22 +58,13 @@ export default function Products(prop) {
                 <th scope="col"></th>
               </tr>
             </thead>
-
-            {products &&
-              products.map((unit) => (
-                <Product
-                  data={unit}
-                  image={unit.image}
-                  name={unit.name}
-                  price={unit.price}
-                  sale={unit.sale}
-                  category={unit.category}
-                  remainder={unit.stock}
-                />
-              ))}
+            <Outlet />
+            
           </table>
         </section>
-        <section></section>
+        <section>
+        <Pagination />
+        </section>
       </div>
     </div>
   );

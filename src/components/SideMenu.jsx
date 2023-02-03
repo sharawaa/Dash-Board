@@ -39,7 +39,7 @@ export default function SideMenu() {
         <button
           className="sideBtn"
           onClick={() => {
-            navigate("/Бүтээгдэхүүнүүд");
+            navigate("/products/page/1");
           }}
         >
           <img src="./image/monitor2.svg" alt="" /> Бүтээгдэхүүнүүд
@@ -47,7 +47,7 @@ export default function SideMenu() {
         <button
           className="sideBtn"
           onClick={() => {
-            navigate("/Захиалгууд");
+            navigate("/orders");
           }}
         >
           <img src="./image/Vector3.svg" alt="" /> Захиалгууд
@@ -55,7 +55,7 @@ export default function SideMenu() {
         <button
           className="sideBtn"
           onClick={() => {
-            navigate("/Хэрэглэгчид");
+            navigate("/users");
           }}
         >
           <img src="./image/users4.svg" alt="" /> Хэрэглэгчид
@@ -63,7 +63,7 @@ export default function SideMenu() {
         <button
           className="sideBtn"
           onClick={() => {
-            navigate("/Модератор");
+            navigate("/moderats");
           }}
         >
           <img src="./image/suitcase5.svg" alt="" /> Модератор
@@ -71,7 +71,7 @@ export default function SideMenu() {
         <button
           className="sideBtn"
           onClick={() => {
-            navigate("/Тохиргоо");
+            navigate("/settings");
           }}
         >
           <img src="./wrench6.svg" alt="" /> Тохиргоо

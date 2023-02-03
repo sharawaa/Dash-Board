@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "../../styles/user.css"
+import Pagination from '../Pagination';
 
 export default function User(props){
     const [show, setShow] = useState(false);
@@ -77,6 +78,7 @@ export default function User(props){
           </div>
         </Offcanvas.Body>
       </Offcanvas>
+      <Pagination />
         </>
     )
 }

@@ -18,7 +18,6 @@ export default function Product(props) {
             alt=""
           />
         </td>
-        {/* console.log(animals.slice(1, 5)); */}
         <td>{props.name}</td>
         <td>{props.price}</td>
         <td>{props.remainder}</td>
