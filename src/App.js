@@ -15,16 +15,17 @@ import axios from "axios";
 import Product from "./components/mainComponents/Product";
 
 function App() {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const [orders, setOrder] = useState();
   const [moderators, setModerators] = useState();
   const [users, setUsers] = useState();
+  const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     axios
       .get("http://localhost:2022/products")
       .then((products) => setProducts(products.data));
-  }, []);
+  }, [refresh]);
   useEffect(() => {
     axios
       .get("http://localhost:2022/orders")
@@ -52,7 +53,13 @@ function App() {
 
           <Route
             path="/products/page/:id"
-            element={<Products products={products && products} />}
+            element={
+              <Products
+                products={products}
+                refresh={refresh}
+                setRefresh={setRefresh}
+              />
+            }
           />
           <Route path="/orders" element={<Orders orders={orders} />} />
           <Route path="/users" element={<Users users={users} />} />

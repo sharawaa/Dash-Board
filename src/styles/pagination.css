@@ -1,21 +1,23 @@
 .active_btn {
+  border: none;
   border-bottom: 2px solid red;
   width: 50px;
   height: 53px;
   color: red;
 }
 .inActive {
+  height: 50px;
   border: none;
   width: 50px;
-
   background-color: white;
   color: black;
 }
 
 .pagination {
   display: flex;
+  justify-content: center;
   border-top: 0.5px solid #666;
   height: 53px;
-  width: 500px;
+  width: 750px;
   border-bottom: 0.5px solid #666;
 }

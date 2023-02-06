@@ -9,7 +9,7 @@ export default function EditCanvas(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const { refresh, setRefresh } = props;
   function editProduct(e) {
     e.preventDefault();
     axios.put(`http://localhost:2022/products/${props.data.id}`, {
@@ -18,8 +18,10 @@ export default function EditCanvas(props) {
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
+      category: e.target.productCategory.value,
       id: props.data.id,
     });
+    setRefresh(!refresh);
     console.log("id:", props.data.id);
     console.log(e.target.productStock.value);
     console.log(e.target.productPrice.value);
@@ -71,7 +73,7 @@ export default function EditCanvas(props) {
                   <p>Category</p>
                   <input
                     type="text"
-                    name="productStock"
+                    name="productCategory"
                     defaultValue={props.data.category}
                   />
                 </section>
@@ -99,7 +101,7 @@ export default function EditCanvas(props) {
                   <p>tailbar</p>
                   <input
                     type="text"
-                    name="productSale"
+                    name="productDesdription"
                     id=""
                     defaultValue={props.data.description}
                   />

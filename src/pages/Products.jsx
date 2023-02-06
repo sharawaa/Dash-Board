@@ -12,8 +12,9 @@ import Pagination from "../components/Pagination";
 
 export default function Products(prop) {
   /* */
+  const { products, refresh, setRefresh } = prop;
+  const length = Math.ceil(products.length / 8);
 
-  const { products } = prop;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -56,11 +57,16 @@ export default function Products(prop) {
                 <th scope="col"></th>
               </tr>
             </thead>
-            <Product products={products} />
+            <Product
+              products={products}
+              refresh={refresh}
+              setRefresh={setRefresh}
+            />
           </table>
         </section>
+
         <section>
-          <Pagination />
+          <Pagination lastPage={length} />
         </section>
       </div>
     </div>
