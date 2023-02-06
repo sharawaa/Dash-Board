@@ -29,18 +29,19 @@ export default function Pagination() {
         <PageBtn btnName={currentPage} btnClass={"active_btn"} />
       </Link>
 
-      <Link
+      {(<Link
         to={`/products/page/${currentPage + 1}`}
         onClick={() => setCurrentPage(currentPage + 1)}
       >
         <PageBtn btnName={currentPage + 1} btnClass={"inActive"} />
       </Link>
-      <Link
+      )}
+      {(<Link
         to={`/products/page/${currentPage + 3}`}
         onClick={() => setCurrentPage(currentPage + 3)}
       >
         <PageBtn btnName={"Дараах"} btnClass={"inActive"} />
-      </Link>
+      </Link>)}
     </div>
   );
 }
