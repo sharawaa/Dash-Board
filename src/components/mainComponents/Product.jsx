@@ -3,17 +3,19 @@ import { useParams } from "react-router-dom";
 import ThreeTseg from "../icon/ThreeTseg";
 import EditCanvas from "./EditCanvas";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { ProductContext } from "../../App";
 
 export default function Product(prop) {
+  const { products, setProducts } = useContext(ProductContext);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const { products, refresh, setRefresh } = prop;
+  const { refresh, setRefresh } = prop;
   const pageNumber = useParams();
   function DeleteHandler(id) {
     axios.delete(`http://localhost:2022/products/${id}`);
@@ -27,7 +29,7 @@ export default function Product(prop) {
       {products
         .slice(0 + 8 * (num - 1), 8 + 8 * (num - 1))
         .map((product, index) => (
-          <tr>
+          <tr key={index}>
             <td>
               <img
                 style={{ width: "80px", height: "80px" }}

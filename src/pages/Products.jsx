@@ -1,18 +1,22 @@
 //import { products } from "../util/data";
 import Product from "../components/mainComponents/Product";
 import "../styles/products.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import Button from "react-bootstrap/Button";
-import { Outlet, Route, Router, Routes, useParams } from "react-router-dom";
+//import { Outlet, Route, Router, Routes, useParams } from "react-router-dom";
 
 import ProductCanvas from "../components/mainComponents/ProductCanvas";
 import Pagination from "../components/Pagination";
+import { ProductContext } from "../App";
 
 export default function Products(prop) {
   /* */
-  const { products, refresh, setRefresh } = prop;
+  const { products, setProducts } = useContext(ProductContext);
+
+  const { refresh, setRefresh } = prop;
+
   const length = Math.ceil(products.length / 8);
 
   const [show, setShow] = useState(false);
@@ -58,7 +62,7 @@ export default function Products(prop) {
               </tr>
             </thead>
             <Product
-              products={products}
+              // products={products}
               refresh={refresh}
               setRefresh={setRefresh}
             />

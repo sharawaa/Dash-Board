@@ -10,22 +10,24 @@ import Orders from "./pages/Orders";
 import Settings from "./pages/Settings";
 import Control from "./pages/Control";
 import Moderators from "./pages/Moderators";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import axios from "axios";
 import Product from "./components/mainComponents/Product";
-
+export const ProductContext = createContext();
 function App() {
-  const [products, setProducts] = useState([]);
   const [orders, setOrder] = useState();
-  const [moderators, setModerators] = useState();
   const [users, setUsers] = useState();
   const [refresh, setRefresh] = useState(true);
+  const [moderators, setModerators] = useState();
+
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:2022/products")
       .then((products) => setProducts(products.data));
   }, [refresh]);
+
   useEffect(() => {
     axios
       .get("http://localhost:2022/orders")
@@ -44,32 +46,36 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      <div className="main">
-        <SideMenu />
+      <ProductContext.Provider
+        value={{ products: products, setProducts: setProducts }}
+      >
+        <Header />
+        <div className="main">
+          <SideMenu />
 
-        <Routes>
-          <Route path="/" element={<Control />} />
+          <Routes>
+            <Route path="/" element={<Control />} />
 
-          <Route
-            path="/products/page/:id"
-            element={
-              <Products
-                products={products}
-                refresh={refresh}
-                setRefresh={setRefresh}
-              />
-            }
-          />
-          <Route path="/orders" element={<Orders orders={orders} />} />
-          <Route path="/users" element={<Users users={users} />} />
-          <Route
-            path="/moderats"
-            element={<Moderators moderators={moderators} />}
-          />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </div>
+            <Route
+              path="/products/page/:id"
+              element={
+                <Products
+                  // products={products}
+                  refresh={refresh}
+                  setRefresh={setRefresh}
+                />
+              }
+            />
+            <Route path="/orders" element={<Orders orders={orders} />} />
+            <Route path="/users" element={<Users users={users} />} />
+            <Route
+              path="/moderats"
+              element={<Moderators moderators={moderators} />}
+            />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </div>
+      </ProductContext.Provider>
     </div>
   );
 }
