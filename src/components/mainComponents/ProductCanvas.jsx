@@ -103,7 +103,7 @@ export default function ProductCanvas(prop) {
                 <p>Брэнд сонгох</p>
                 <select id="country" name="country">
                   <option value="samsung">Samsung</option>
-                  <option value="apple">Apple</option>
+                  <option value="apple">Applee</option>
                 </select>
               </section>
             </section>
