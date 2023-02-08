@@ -102,8 +102,9 @@ export default function Moderators(prop) {
               </tr>
             </thead>
             {moderators &&
-              moderators.map((uni) => (
+              moderators.map((uni, index) => (
                 <Moderator
+                  key={index}
                   moderator={uni.moderator}
                   sureName={uni.sureName}
                   name={uni.name}

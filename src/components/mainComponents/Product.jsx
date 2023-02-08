@@ -22,7 +22,6 @@ export default function Product(prop) {
     setRefresh(!refresh);
   }
   const num = pageNumber.id;
-  console.log("pageNumber.id gej yg yu ve", products.length);
 
   return (
     <tbody>

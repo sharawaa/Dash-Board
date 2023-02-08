@@ -2,7 +2,7 @@ import "../styles/users.css";
 
 import User from "../components/mainComponents/User";
 export default function Users(prop) {
-  const {users} = prop
+  const { users } = prop;
   return (
     <div className="users-container">
       <div className="users">
@@ -53,17 +53,19 @@ export default function Users(prop) {
                 <th scope="col">Огноо</th>
               </tr>
             </thead>
-            {users && users.map((uni) => (
-              <User
-                id={uni.id}
-                name={uni.name}
-                date={uni.date}
-                order={uni.order}
-                email={uni.email}
-                sureName={uni.sureName}
-                phone={uni.phone}
-              />
-            ))}
+            {users &&
+              users.map((uni, index) => (
+                <User
+                  key={index}
+                  id={uni.id}
+                  name={uni.name}
+                  date={uni.date}
+                  order={uni.order}
+                  email={uni.email}
+                  sureName={uni.sureName}
+                  phone={uni.phone}
+                />
+              ))}
           </table>
         </section>
       </div>
