@@ -12,7 +12,7 @@ import Control from "./pages/Control";
 import Moderators from "./pages/Moderators";
 import { useEffect, useState, createContext } from "react";
 import axios from "axios";
-import Product from "./components/mainComponents/Product";
+
 export const ProductContext = createContext();
 function App() {
   const [orders, setOrder] = useState();
