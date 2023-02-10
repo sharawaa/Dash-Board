@@ -13,18 +13,22 @@ export default function Moderators(prop) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+ 
+
 
   function moderatSave(e) {
     e.preventDefault();
+    let object = {
+      sureName: e.target.sureName.value,
+      name: e.target.name.value,
+      eMail: e.target.eMail.value,
+      phone: e.target.phoneNumber.value,
+      id: uuidv4(),
+    }
     axios
-      .post("http://localhost:2022/moderats", {
-        sureName: e.target.sureName.value,
-        name: e.target.name.value,
-        eMail: e.target.eMail.value,
-        phone: e.target.phoneNumber.value,
-        id: uuidv4(),
-      })
+      .post("http://localhost:2022/moderators", object)
       .then((res) => console.log(res));
+      //window.location.reload()
     console.log(e.target.phoneNumber.value);
   }
   return (
@@ -112,6 +116,7 @@ export default function Moderators(prop) {
                   phone={uni.phone}
                   goodsSold={uni.goodsSold}
                   date={uni.date}
+                  id={uni.id}
                 />
               ))}
           </table>

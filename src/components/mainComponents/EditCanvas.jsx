@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../../styles/editCanvas.css";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+
 
 export default function EditCanvas(props) {
   const [show, setShow] = useState(false);
