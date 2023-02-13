@@ -1,81 +1,65 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import "../styles/slidemenu.css"
-
-
-
-
-// export default function SlideMenu() {
-//     const navigate = useNavigate();
-
-//   return <div className="slidemenu">
-//     <button  onClick={()=>{navigate("/")}}>хянах самбар</button>
-//     <button onClick={()=>{navigate("/Бүтээгдэхүүнүүд")}}>Бүтээгдэхүүнүүд</button>
-//     <button onClick={()=>{navigate("/Захиалгууд")}}>Захиалгууд</button>
-//     <button onClick={()=>{navigate("/Хэрэглэгчид")}}>Хэрэглэгчид</button>
-//     <button onClick={()=>{navigate("/Модератор")}}>Модератор</button>
-//     <button onClick={()=>{navigate("/Тохиргоо")}}>Тохиргоо</button>
-
-//   </div>;sideBtn className="sideBtn"
-  
-// }
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link} from "react-router-dom";
 import "../styles/sidemenu.css"
 
 export default function SideMenu() {
-  const navigate = useNavigate();
+  
+  const [btnState, setBtnState] = useState("")
 
+  function handleClick(event){
+    setBtnState(event.target.id)
+}
   return (
     <>
       <div className="sideMenu">
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/");
-          }}
+        <Link
+        to={"/"}
+          className= {btnState==="1" ? "active": "sideBtn"}
+         onClick={handleClick}
+         id={1}
         >
           <img src="./image/Dashboard1.svg" alt="" /> хянах самбар
-        </button>
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/products/page/1");
-          }}
+        </Link>
+        <Link
+        to={"/products/page/1"}
+         className= {btnState==="2" ? "active": "sideBtn"}
+           onClick={handleClick}
+           id={2}
         >
           <img src="./image/monitor2.svg" alt="" /> Бүтээгдэхүүнүүд
-        </button>
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/orders");
-          }}
+        </Link>
+        <Link
+        to={"/orders"}
+         className= {btnState==="3" ? "active": "sideBtn"}
+          onClick={handleClick}
+          id={3}
         >
           <img src="./image/Vector3.svg" alt="" /> Захиалгууд
-        </button>
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/users");
-          }}
+        </Link>
+        <Link
+        to={"/users"}
+         className= {btnState==="4" ? "active": "sideBtn"}
+          onClick={handleClick}
+          id={4}
         >
           <img src="./image/users4.svg" alt="" /> Хэрэглэгчид
-        </button>
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/moderats");
-          }}
+        </Link>
+        <Link
+        to={"/moderats"}
+         className= {btnState==="5" ? "active": "sideBtn"}
+          onClick={handleClick}
+          id={5}
         >
           <img src="./image/suitcase5.svg" alt="" /> Модератор
-        </button>
-        <button
-          className="sideBtn"
-          onClick={() => {
-            navigate("/settings");
-          }}
+        </Link>
+        <Link
+        to={"/settings"}
+         className= {btnState==="6" ? "active": "sideBtn"}
+          onClick={handleClick}
+          id={6}
         >
           <img src="./wrench6.svg" alt="" /> Тохиргоо
-        </button>
+        </Link>
 
         <img src="" alt="" />
       </div>
