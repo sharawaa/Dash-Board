@@ -13,7 +13,7 @@ export default function User(props) {
     <>
       <tbody>
         <tr>
-          <td>{props.id}</td>
+          <td>{props.id.slice(0, 5)}...</td>
           <td>{props.sureName}</td>
           <td>{props.name}</td>
           <td>{props.email.slice(0, 5)}...</td>
