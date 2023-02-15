@@ -1,6 +1,7 @@
 import "../styles/orders.css";
 
 import Order from "../components/mainComponents/Order";
+import ThreeTseg from "../components/icon/ThreeTseg";
 export default function Orders(prop) {
   const { orders } = prop;
   return (
@@ -47,12 +48,13 @@ export default function Orders(prop) {
                 <th scope="col">Захиалга No</th>
                 <th scope="col">Огноо</th>
                 <th scope="col">Утас</th>
-                <th scope="col">И-мэйл</th>
+                
                 <th scope="col">Хаяг</th>
-                <th scope="col">Тоо</th>
+               
                 <th scope="col">Нийт дүн ₮</th>
                 <th scope="col">Төлбөр</th>
                 <th scope="col">Статус</th>
+                <th><ThreeTseg /></th>
               </tr>
             </thead>
             {orders &&
