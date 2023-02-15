@@ -54,18 +54,7 @@ export default function Users(prop) {
               </tr>
             </thead>
             {users &&
-              users.map((uni, index) => (
-                <User
-                  key={index}
-                  id={uni.id}
-                  name={uni.name}
-                  date={uni.date}
-                  order={uni.order}
-                  email={uni.email}
-                  sureName={uni.sureName}
-                  phone={uni.phone}
-                />
-              ))}
+              users.map((uni, index) => <User key={index} data={uni} />)}
           </table>
         </section>
       </div>

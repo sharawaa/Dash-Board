@@ -46,9 +46,7 @@ function App() {
 
   return (
     <div className="app">
-      <ProductContext.Provider
-        value={{ products: products, setProducts: setProducts }}
-      >
+      <ProductContext.Provider value={{ products, setProducts, orders }}>
         <Header />
         <div className="main">
           <SideMenu />

@@ -5,6 +5,7 @@ import "../../styles/user.css";
 import Pagination from "../Pagination";
 
 export default function User(props) {
+  const { data } = props;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,13 +14,13 @@ export default function User(props) {
     <>
       <tbody>
         <tr>
-          <td>{props.id.slice(0, 5)}...</td>
-          <td>{props.sureName}</td>
-          <td>{props.name}</td>
-          <td>{props.email.slice(0, 5)}...</td>
-          <td>{props.phone}</td>
-          <td>{props.order}</td>
-          <td>{props.date}</td>
+          <td>{data.id.slice(0, 5)}...</td>
+          <td>{data.sureName}</td>
+          <td>{data.name}</td>
+          <td>{data.email.slice(0, 5)}...</td>
+          <td>{data.phone}</td>
+          <td>{data.order}</td>
+          <td>{data.date}</td>
           <td>
             <Button variant="white" onClick={handleShow}>
               <img src="./image/treeTseg.svg" alt="" />

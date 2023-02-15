@@ -57,18 +57,7 @@ export default function Orders(prop) {
             </thead>
             {orders &&
               orders.map((unit, index) => (
-                <Order
-                  key={index}
-                  no={unit.no}
-                  date={unit.date}
-                  phone={unit.phone}
-                  email={unit.eMail}
-                  address={unit.address}
-                  number={unit.number}
-                  totalAmount={unit.totalAmount}
-                  payment={unit.payment}
-                  status={unit.status}
-                />
+                <Order key={index} orderData={unit} />
               ))}
           </table>
         </section>
