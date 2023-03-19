@@ -21,11 +21,13 @@ function App() {
   const [moderators, setModerators] = useState();
 
   const [products, setProducts] = useState([]);
+    
 
   useEffect(() => {
     axios
-      .get("http://localhost:2022/products")
+      .get("http://localhost:2000/product")
       .then((products) => setProducts(products.data));
+     
   }, [refresh]);
 //git hub
   useEffect(() => {

@@ -22,7 +22,7 @@ export default function ProductCanvas(prop) {
       
     };
     axios
-      .post("http://localhost:2022/products", object)
+      .post("http://localhost:2000/products", object)
       .then((res) => console.log(res));
    window.location.reload()
   }
