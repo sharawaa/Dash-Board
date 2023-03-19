@@ -18,7 +18,7 @@ export default function Product(prop) {
   const { refresh, setRefresh } = prop;
   const pageNumber = useParams();
   function DeleteHandler(id) {
-    axios.delete(`http://localhost:2022/products/${id}`);
+    axios.delete(`http://localhost:2000/products/${id}`);
     setRefresh(!refresh);
   }
   const num = pageNumber.id;
