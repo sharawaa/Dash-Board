@@ -21,15 +21,13 @@ function App() {
   const [moderators, setModerators] = useState();
 
   const [products, setProducts] = useState([]);
-    
 
   useEffect(() => {
     axios
       .get("http://localhost:2000/product")
       .then((products) => setProducts(products.data));
-     
   }, [refresh]);
-//git hub
+  //git hub
   useEffect(() => {
     axios
       .get("http://localhost:2022/orders")
@@ -42,13 +40,13 @@ function App() {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:2022/users")
+      .get("http://localhost:2000/users")
       .then((users) => setUsers(users.data));
   }, []);
-
+  console.log("users", users);
   return (
     <div className="app">
-      <ProductContext.Provider value={{ products, setProducts, orders , users }}>
+      <ProductContext.Provider value={{ products, setProducts, orders, users }}>
         <Header />
         <div className="main">
           <SideMenu />

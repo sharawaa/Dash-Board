@@ -6,25 +6,32 @@ import axios from "axios";
 export default function ProductCanvas(prop) {
   const [addIndicator, setAddIndicator] = useState([]);
   const { products } = prop;
-  
+
   //const [addProduct, setAddProduct] = useState();
 
   function productSave(e) {
-    
     e.preventDefault();
+
     let object = {
-      image:e.target.productImage.value,
       name: e.target.productName.value,
       stock: e.target.productStock.value,
       price: e.target.productPrice.value,
       sale: e.target.productSale.value,
       category: e.target.category.value,
-      
     };
+    console.log("test", object);
     axios
       .post("http://localhost:2000/products", object)
       .then((res) => console.log(res));
-   window.location.reload()
+
+    let image = new FormData();
+
+    image.append("image", e.target.productImage.files[0]);
+
+    axios
+      .post("http://localhost:2000/file", image)
+      .then((res) => console.log(res));
+    console.log("image", image);
   }
 
   return (
@@ -39,7 +46,7 @@ export default function ProductCanvas(prop) {
               <input
                 className="offcanvas-body-image-input-1"
                 name="productImage"
-                type="text"
+                type="file"
               />
             </section>
           </div>

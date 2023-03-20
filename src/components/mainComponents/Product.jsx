@@ -4,8 +4,8 @@ import ThreeTseg from "../icon/ThreeTseg";
 import EditCanvas from "./EditCanvas";
 
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+//import Button from "react-bootstrap/Button";
+//import Modal from "react-bootstrap/Modal";
 import { ProductContext } from "../../App";
 
 export default function Product(prop) {
@@ -17,10 +17,12 @@ export default function Product(prop) {
 
   const { refresh, setRefresh } = prop;
   const pageNumber = useParams();
-  function DeleteHandler(id) {
-    axios.delete(`http://localhost:2000/products/${id}`);
+  function DeleteHandler(_id) {
+    console.log("ene yuu vee", _id);
+    axios.delete(`http://localhost:2000/products/${_id}`);
     setRefresh(!refresh);
   }
+
   const num = pageNumber.id;
 
   return (
@@ -65,11 +67,11 @@ export default function Product(prop) {
                   />
                 </li>
                 <li>
-                  {/* <button onClick={() => DeleteHandler(product.id)}>
-                      ustgah
-                    </button> */}
+                  <button onClick={() => DeleteHandler(product._id)}>
+                    ustgah
+                  </button>
 
-                  <Button variant="white" onClick={handleShow}>
+                  {/* <Button variant="white" onClick={handleShow}>
                     Устгах
                   </Button>
                   <Modal show={show} onHide={handleClose}>
@@ -89,7 +91,7 @@ export default function Product(prop) {
                         Тийм
                       </Button>
                     </Modal.Footer>
-                  </Modal>
+                  </Modal> */}
                 </li>
                 <li>
                   <a className="dropdown-item" href="##">
