@@ -20,19 +20,22 @@ export default function ProductCanvas(prop) {
       category: e.target.category.value,
     };
     console.log("test", object);
-    axios
-      .post("http://localhost:2000/products", object)
-      .then((res) => console.log(res));
-  }
+    // axios
+    //   .post("http://localhost:2000/products", object)
+    //   .then((res) => console.log(res));
 
-  function imageUpload(e){
-    e.preventDefault()
-    let image = new FormData();
-    image.append("image", e.target.productImage.files[0]);
+    let product = new FormData();
+    product.append("file", e.target.productImage.files[0]);
+    product.append("product", JSON.stringify(object));
+
     axios
-      .post("http://localhost:2000/file", image)
+      .post("http://localhost:2000/product", product)
       .then((res) => console.log(res));
     console.log("imag shu", e.target.productImage.files[0]);
+  }
+
+  function imageUpload(e) {
+    e.preventDefault();
   }
 
   return (
@@ -41,29 +44,15 @@ export default function ProductCanvas(prop) {
         <Offcanvas.Title>Offcanvas</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className="offcanvas-body container">
-
-
-
-        <form onSubmit={imageUpload}>
-
-          <input type="file" name="productImage" />
-          <button type="submit">upload</button>
-          
-        </form>
-
-
-
-
-
         <form onSubmit={productSave}>
           <div className="offcanvas-body-image">
-            {/* <section>
+            <section>
               <input
                 className="offcanvas-body-image-input-1"
                 name="productImage"
                 type="file"
               />
-            </section> */}
+            </section>
           </div>
 
           <div className="d-flex">
