@@ -27,6 +27,7 @@ function App() {
       .get("http://localhost:2000/product")
       .then((products) => setProducts(products.data));
   }, [refresh]);
+  console.log(products);
   //git hub
   useEffect(() => {
     axios
@@ -43,7 +44,7 @@ function App() {
       .get("http://localhost:2000/users")
       .then((users) => setUsers(users.data));
   }, []);
-  // console.log("users", users);
+  console.log("users", users);
   return (
     <div className="app">
       <ProductContext.Provider value={{ products, setProducts, orders, users }}>
