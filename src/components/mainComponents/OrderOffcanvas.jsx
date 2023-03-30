@@ -2,34 +2,37 @@ import { useContext } from "react";
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { ProductContext } from "../../App";
-import "../../styles/orderOffcanvas.css"
+import "../../styles/orderOffcanvas.css";
 import ThreeTseg from "../icon/ThreeTseg";
 
 export default function OrderOffcanvas(prop) {
-  const {users} = useContext(ProductContext)
+  const { users } = useContext(ProductContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { products } = useContext(ProductContext);
   const { orderData } = prop;
 
+  console.log("offcanvas", orderData);
   let findOrder =
-  products &&
+    products &&
     products.filter((orderPro) => {
       return orderData.orderProducts.find((product) => {
-        return product.id === orderPro.id
+        return product.id === orderPro.id;
       });
     });
-    let findStock = orderData && orderData.orderProducts.map((order)=>{
-      return order.stock
-    })
-   
-   
-    
-    let findUser = users && users.filter((user)=>{
-      return orderData.userId===user.id
-    })
-   
+  let findStock =
+    orderData &&
+    orderData.orderProducts.map((order) => {
+      return order.stock;
+    });
+
+  let findUser =
+    users &&
+    users.filter((user) => {
+      return orderData.userId === user._id;
+    });
+
   return (
     <>
       <button className="order-button" onClick={handleShow}>
@@ -48,17 +51,21 @@ export default function OrderOffcanvas(prop) {
                 {" "}
                 <p className="off-order-top-head-p ">Захиалсан бараа</p>
                 <div>
-                {findOrder.map((order, index)=>{
-                  return(
-                    <div key={index} className="orderProduct">
-                      <h4>{order.name}</h4>
-                      <img className="orderProduct-image" src={order.image}  alt="" />
-                      <h6>{findStock[0]}</h6>
-                      <h6>une{order.price}$</h6>
-                      <h6>niit une {(order.price)*(findStock[0])}$</h6>
-                    </div>
-                  )
-                })}
+                  {findOrder.map((order, index) => {
+                    return (
+                      <div key={index} className="orderProduct">
+                        <h4>{order.name}</h4>
+                        <img
+                          className="orderProduct-image"
+                          src={order.image}
+                          alt=""
+                        />
+                        <h6>{findStock[0]}</h6>
+                        <h6>une{order.price}$</h6>
+                        <h6>niit une {order.price * findStock[0]}$</h6>
+                      </div>
+                    );
+                  })}
                 </div>
               </section>
             </div>
@@ -77,7 +84,7 @@ export default function OrderOffcanvas(prop) {
 
                   <section>
                     <p>Утасны дугаар</p>
-                    <input type="text" defaultValue={findUser[0].phone}/>
+                    <input type="text" defaultValue={findUser[0].phone} />
                   </section>
                 </section>
                 <section className="off-order-main-top-end">
@@ -91,17 +98,15 @@ export default function OrderOffcanvas(prop) {
                   </section>
                   <section>
                     <p>Нэмэлт утасны дугаар</p>
-                    <input type="text" />
+                    <input type="text" defaultValue={findUser[0].phone} />
                   </section>
                 </section>
               </section>
 
               <section className="off-order-main-footer">
                 <p>Хүргүүлэх хаяг:</p>
-                <section
-                  className="orderAddress"
-                >
-                 <p>{orderData.address}</p> 
+                <section className="orderAddress">
+                  <p>{orderData.address}</p>
                 </section>
               </section>
             </div>

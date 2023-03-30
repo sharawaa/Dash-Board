@@ -31,9 +31,10 @@ function App() {
   //git hub
   useEffect(() => {
     axios
-      .get("http://localhost:2022/orders")
+      .get("http://localhost:2000/order")
       .then((orders) => setOrder(orders.data));
   }, []);
+  console.log("orders", orders);
   useEffect(() => {
     axios
       .get("http://localhost:2022/moderators")
